@@ -24,48 +24,19 @@ endpoint]
 
 \`GET /issposition\`
 
-\#\#\# Body
-
-\`\`\`json
-
-{
-
-"message": "success",
-
-"timestamp": 1593545207,
-
-"iss_position": {
-
-"longitude": "14.3289",
-
-"latitude": "-46.2072"
-
-}
-
-}
-
-\`\`\`
-
 \#\#\#\# Parameters
+
+There are no parameters required to get the ISS position from the API.
 
 Field\|Required\|description
 
 :-----:\|:-----:\|:-----:
 
-message\|yes\|Gives the status on getting the ISS position. timestamp\|yes\|Unix
-time stamp indicating that the ISS position was calculated at that time
-
-iss_position\|yes\|ISS calculated position on earth
-
-longitude\|yes\|ISS longitude on earth
-
-latitude\|yes\|ISS latitude on earth
-
 \#\# Response by status
 
 \#\#\# 200 OK
 
-The API <http://api.open-notify.org/iss-now.json> has returned the ISS position
+The API http://api.open-notify.org/iss-now.json has returned the ISS position
 correctly.
 
 If we receive the ISS position, we calculate the temperature at that position on
