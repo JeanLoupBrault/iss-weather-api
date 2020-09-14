@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 // import { getIssPosition } from '../../server/index';
+import styled from 'styled-components';
 
 require('dotenv').config();
 
@@ -22,16 +23,34 @@ const Iss = () => {
     const response = await fetch(`http://api.open-notify.org/iss-now.json`);
     const data = await response.json();
     setIssPosition(data);
-    console.log('data', data);
+    console.log('data: ', data);
+    console.log('typeof data: ', typeof data);
+    console.log('data.iss_position: ', data.iss_position);
+    console.log('data.iss_position.latitude: ', data.iss_position.latitude);
   }
 
 
   return (
     <div>
-      isscurrentpos
-      {setIssPosition}
+      <IssPos>
+        isscurrentpos
+        {setIssPosition}
+      </IssPos>
+      <div>
+
+        {getIssPosition}
+      </div>
     </div>
+
   );
 }
+
+const IssPos = styled.div`
+height: 300px;
+width: 100%;
+text-decoration: underline;
+color: blue;
+background-color: lightgray;
+`;
 
 export default Iss;
